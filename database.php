@@ -1,6 +1,7 @@
 <?php
+
 $databaseConfig = Array(
-"db" =	> "airline",
+	"db" => "airline",
 	"server" => "localhost",
 	"user" => "root",
 	"pass" => "root"

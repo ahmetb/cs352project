@@ -1,0 +1,27 @@
+body {
+	margin: 0;
+	font: 18px normal Helvetica, Arial, sans-serif, serif;
+}
+
+h1, h2,h3,h4,h5{
+	margin:0;
+	padding:0;
+}
+
+a img {
+	border: 0px none;
+}
+
+div#container {
+	margin: 30px auto;
+	padding: 10px;
+	width: 70%;
+	background-color: #e5e5e5;
+}
+
+div#container div#logo {
+	width: 100%;
+	text-align:center;
+	font-size: 50px;
+	font-family: Georgia, Arial, sans-serif,serif;
+}
