@@ -1,9 +1,9 @@
 
-<form method='POST' action='login.php'>
+<form method='POST' action='<?=$_PHP_SELF?>'>
 	<fieldset>
-		<legend>Please log in</legend>
+		<legend>New customer registration</legend>
 		<div class='line'>
-			<div class='label'>Type</div>
+			<div class='label'>Name</div>
 			<div class='field'>
 				<select name='type' id='type'>
 					<option value='customer'>customer</option>
@@ -25,18 +25,17 @@
 				<input type='password' name='password' id='password'/>
 			</div>
 		</div>
+		
+		<div class='line'>
+			<div class='label'>Phone Number</div>
+			<div class='field'>
+				<input type='text' name='phone' id='phone'/>
+			</div>
+		</div>
 
 		<div class='line'>
 			<div class='label'>&nbsp;</div>
 			<div class='field'><input type='submit' value='Proceed &raquo;'/></div>			
-		</div>
-		
-		<div class='line'>
-			<div class='label'>&nbsp;</div>
-			<div class='field'>
-				<a href='signup.php'>New customer?  &raquo;</a> –		
-				<a href='signup_staff.php'>Staff signup  &raquo;</a>
-			</div>
 		</div>
 	</fieldset>
 </form>

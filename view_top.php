@@ -7,7 +7,6 @@
 <body>
 <div id='container'>
 	<div id='logo'>
-		Airline Company
+		<a href='index.php'>Airline Company</a> &trade;
 	</div>
-	
-	
+
