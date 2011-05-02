@@ -15,7 +15,7 @@ a img {
 div#container {
 	margin: 30px auto;
 	padding: 10px;
-	width: 70%;
+	width: 800px;
 	background-color: #e5e5e5;
 }
 
@@ -24,4 +24,41 @@ div#container div#logo {
 	text-align:center;
 	font-size: 50px;
 	font-family: Georgia, Arial, sans-serif,serif;
+}
+
+fieldset legend {
+	font-size: 200%;
+}
+
+div.line {
+	width:100%;
+	clear:both;
+	padding: 10px 0;
+}
+
+div.label {
+	width: 250px;
+	text-align: right;
+	font-size: 22px;
+	padding-right: 10px;
+	float:left;
+}
+
+div.field {
+	width: 500px;
+	float:right;
+}
+
+input, select {
+	font-size: 17px;
+}
+
+a {
+	padding: 5px;
+}
+
+a:hover {
+	background-color: #333;
+	color: #fff;
+
 }
