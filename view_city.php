@@ -68,7 +68,7 @@ function edit(id, name){
 </div>
 
 <div id='create'>
-	<form method='post' action='city.php?action=new' onsubmit='return add_check();'>
+	<form method='post' action='?action=new' onsubmit='return add_check();'>
 		<fieldset>
 			<legend>New City</legend>
 
