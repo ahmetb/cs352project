@@ -1,3 +1,5 @@
+* security
+
 * create CHECKs on tables.
 
 * staff signup missing
@@ -9,6 +11,8 @@ CREATE VIEW route_listing AS
 (SELECT r.id, CONCAT(f.name,'-',t.name) AS route_name,
 f.id as departure, t.id as destination, r.duration
 from route r, airport f, airport t WHERE r.departure=f.id AND r.destination=t.id);
+
+* flight_staff ROLE added.
 
 * BEGIN TRANSACTION STMT
 
@@ -22,4 +26,10 @@ from route r, airport f, airport t WHERE r.departure=f.id AND r.destination=t.id
 
 * update staff list sql
 
-* don't change staff role. and passwords.
+* lim:don't change staff role. and passwords.
+
+* lim:only one hostess and 2 pilots on a flight.
+
+* lim:salaries per month, not per flight.
+
+* lim: an airplane and flight staff may have enrolled to >1 flights at a time.

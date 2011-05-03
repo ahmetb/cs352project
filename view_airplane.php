@@ -34,16 +34,16 @@ function edit(id, name,model,capacity){
 		<td width='10%'>Id</td>
 		<td width='30%'>Name</td>
 		<td width='20%'>Model</td>
-		<td width='10%'>Capacity</td>
-		<td width='30%'>Operation</td>		
+		<td width='15%'>Capacity</td>
+		<td width='25%'>Operation</td>		
 	</tr>	
 <?php foreach($airplanes as $airplane){?>
 	<tr>
 		<td width='10%'><?=$airplane['id']?></td>
 		<td width='30%'><?=$airplane['name']?></td>
 		<td width='20%'><?=$airplane['model']?></td>
-		<td width='10%'><?=$airplane['capacity']?></td>
-		<td width='30%'>
+		<td width='15%'><?=$airplane['capacity']?></td>
+		<td width='25%'>
 			<a href='javascript://' onclick="edit(
 			'<?=$airplane['id']?>',
 			'<?=$airplane['name']?>',

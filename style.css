@@ -106,3 +106,7 @@ table a {
 .success {color: #0000ff;}
 
 .error {color: red;}
+
+ul li {
+	line-height:150%;
+}
