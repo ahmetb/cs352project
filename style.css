@@ -1,3 +1,7 @@
+html, body {
+	height: 100%;
+}
+
 body {
 	margin: 0;
 	font: 18px normal Helvetica, Arial, sans-serif, serif;
@@ -38,11 +42,16 @@ div#container div#logout {
 
 div#container div#content {
 	margin-top: 20px;
-	margin-left: 20px;
+
+}
+
+fieldset {
+
 }
 
 fieldset legend {
-	font-size: 200%;
+	font-family: Georgia, Arial, sans-serif,serif;
+	font-size: 130%;
 }
 
 div.line {
@@ -73,6 +82,15 @@ a { padding: 5px; }
 a:hover {
 	background-color: #333;
 	color: #fff;
+}
+
+table.data{
+	margin:10px auto;
+	border: 0px;
+}
+
+table.data td {
+	border: 1px solid;
 }
 
 .success {color: #0000ff;}

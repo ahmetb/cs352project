@@ -9,3 +9,4 @@
 </div>
 </body>
 </html>
+<?if($mysql) mysql_close($mysql)?>

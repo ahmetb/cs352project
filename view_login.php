@@ -23,7 +23,7 @@ function check(){
 			<div class='label'>Type</div>
 			<div class='field'>
 				<select name='type' id='type'>
-					<option value='customer'>customer</option>
+					<option value='customer'>Customer</option>
 					<option value='staff'>Staff</option>
 				</select>
 			</div>

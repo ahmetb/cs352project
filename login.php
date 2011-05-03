@@ -42,7 +42,7 @@ if ($_POST){
 		}
 	}
 } 
-if (!$_SESSION['login']){
-	require_once 'view_top.php';
-	require_once 'view_login.php';
-}
+
+require_once 'view_top.php';
+require_once 'view_login.php';
+require_once 'view_bottom.php';

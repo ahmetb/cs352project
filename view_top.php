@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Airline company</title>
+	<title>Airline Company</title>
 	<link href="style.css" media="screen" rel="stylesheet" type="text/css"/> 
 	<script type='text/javascript' src='jquery.js'></script>
 </head>
@@ -11,4 +11,3 @@
 		<a href='index.php'>Airline Company</a>
 	</div>
 <div id='content'>
-
