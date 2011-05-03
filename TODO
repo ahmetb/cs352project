@@ -11,3 +11,15 @@ f.id as departure, t.id as destination, r.duration
 from route r, airport f, airport t WHERE r.departure=f.id AND r.destination=t.id);
 
 * BEGIN TRANSACTION STMT
+
+* role enums
+
+* lim: only one route between two places (a,b)
+
+* lim: flight staff can't log in
+
+* login item: name
+
+* update staff list sql
+
+* don't change staff role. and passwords.

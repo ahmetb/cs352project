@@ -7,7 +7,7 @@
 	<li><a href='airplane.php'>Airplanes</a></li>		
 	<li><a href='route.php'>Routes</a></li>
 	<li><a href='flight.php'>Flights</a></li>
-	<li><a href='crew.php'>Crew</a></li>	
+	<li><a href='staff.php'>Crew</a></li>	
 </ul>
 
 <h3>Reports</h3>

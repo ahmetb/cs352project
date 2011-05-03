@@ -98,6 +98,11 @@ table.data tr.legend td {
 	text-align:center;
 }
 
+table a {
+	margin:0;
+	padding:0;
+}
+
 .success {color: #0000ff;}
 
 .error {color: red;}
