@@ -54,7 +54,7 @@ if ($action == 'delete'){
 	$success = 'Airplane has been deleted.';
 }
 
-// Query cities.
+// Query airplanes.
 $airplanes = Array();
 $airplanes_result = mysql_query('SELECT * FROM plane', $mysql) or die(mysql_error());
 while ($row = mysql_fetch_assoc($airplanes_result)) {

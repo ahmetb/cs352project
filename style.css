@@ -94,6 +94,10 @@ table.data td {
 	border: 1px solid;
 }
 
+table.data tr.legend td {
+	text-align:center;
+}
+
 .success {color: #0000ff;}
 
 .error {color: red;}

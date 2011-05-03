@@ -3,3 +3,11 @@
 * staff signup missing
 
 * staff dashboard missing.
+
+* update route_listing view sql
+CREATE VIEW route_listing AS 
+(SELECT r.id, CONCAT(f.name,'-',t.name) AS route_name,
+f.id as departure, t.id as destination, r.duration
+from route r, airport f, airport t WHERE r.departure=f.id AND r.destination=t.id);
+
+* BEGIN TRANSACTION STMT

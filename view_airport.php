@@ -36,7 +36,7 @@ function edit(id, name, code, city){
 <?php if($error){?><div class='line error'><?=$error?></div><?php }?>
 
 <table class='data'>
-	<tr>
+	<tr class='legend'>
 		<td width='10%'>ID</td>
 		<td width='10%'>Code</td>
 		<td width='30%'>Name</td>
@@ -102,9 +102,9 @@ foreach($results as $result){?>
 </div>
 
 <div id='create'>
-	<form method='post' action='airport.php?action=new' onsubmit='return add_check();'>
+	<form method='post' action='?action=new' onsubmit='return add_check();'>
 		<fieldset>
-			<legend>New City</legend>
+			<legend>New Airport</legend>
 			<div class='line'>
 				<div class='label'>Name</div>
 				<div class='field'>

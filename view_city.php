@@ -30,7 +30,7 @@ function edit(id, name){
 <?php if($error){?><div class='line error'><?=$error?></div><?php }?>
 
 <table class='data'>
-	<tr>
+	<tr class='legend'>
 		<td width='10%'>ID</td>
 		<td width='50%'>Name</td>
 		<td width='50%'>Operation</td>		
