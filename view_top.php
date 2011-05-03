@@ -3,10 +3,12 @@
 <head>
 	<title>Airline company</title>
 	<link href="style.css" media="screen" rel="stylesheet" type="text/css"/> 
+	<script type='text/javascript' src='jquery.js'></script>
 </head>
 <body>
 <div id='container'>
 	<div id='logo'>
-		<a href='index.php'>Airline Company</a> &trade;
+		<a href='index.php'>Airline Company</a>
 	</div>
+<div id='content'>
 

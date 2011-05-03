@@ -4,8 +4,10 @@ body {
 }
 
 h1, h2,h3,h4,h5{
-	margin:0;
-	padding:0;
+
+	font-family: Georgia, 'Myriad Pro', Arial, serif;
+	color: #333;
+	font-weight: normal;
 }
 
 a img {
@@ -17,6 +19,7 @@ div#container {
 	padding: 10px;
 	width: 800px;
 	background-color: #e5e5e5;
+	position:relative;
 }
 
 div#container div#logo {
@@ -24,6 +27,18 @@ div#container div#logo {
 	text-align:center;
 	font-size: 50px;
 	font-family: Georgia, Arial, sans-serif,serif;
+}
+
+div#container div#logout {
+	right:10px;
+	top:20px;
+	position:absolute;
+	text-align: right;
+}
+
+div#container div#content {
+	margin-top: 20px;
+	margin-left: 20px;
 }
 
 fieldset legend {
@@ -53,12 +68,13 @@ input, select {
 	font-size: 17px;
 }
 
-a {
-	padding: 5px;
-}
+a { padding: 5px; }
 
 a:hover {
 	background-color: #333;
 	color: #fff;
-
 }
+
+.success {color: #0000ff;}
+
+.error {color: red;}

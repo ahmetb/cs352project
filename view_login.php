@@ -1,7 +1,24 @@
+<script type='text/javascript'>
+function check(){
+	if (!$('#username').val()){
+		$('#username').focus();
+		return false;
+	}
+	if(!$('#password').val()){
+		$('#password').focus();
+		return false;
+	}
+	return true;
+}
+</script>
 
-<form method='POST' action='login.php'>
+
+<form method='POST' action='login.php' onsubmit='return check();'>
 	<fieldset>
-		<legend>Please log in</legend>
+		<legend>Please log in or register</legend>
+		<?php if($success){?><div class='line success'><?=$success?></div><?php }?>
+		<?php if($error){?><div class='line error'><?=$error?></div><?php }?>
+
 		<div class='line'>
 			<div class='label'>Type</div>
 			<div class='field'>
@@ -34,8 +51,8 @@
 		<div class='line'>
 			<div class='label'>&nbsp;</div>
 			<div class='field'>
-				<a href='signup.php'>New customer?  &raquo;</a> –		
-				<a href='signup_staff.php'>Staff signup  &raquo;</a>
+				<a href='signup.php'>New customer?&raquo;</a> -
+				<a href='signup_staff.php'>Staff signup&raquo;</a>
 			</div>
 		</div>
 	</fieldset>
