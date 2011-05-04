@@ -40,6 +40,6 @@
 			
 	<div class='line'>
 		<div class='label'><input type='button' value='&laquo; Check-in screen' onclick='window.location="index.php"'/></div>
-		<div class='field'><input type='button' value='Print ticket &raquo;'/></div>			
+		<div class='field'><input type='button' onclick='window.print()' value='Print ticket &raquo;'/></div>			
 	</div>
 </fieldset>

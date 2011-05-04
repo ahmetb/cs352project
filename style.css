@@ -25,6 +25,7 @@ div#container {
 	width: 800px;
 	background-color: #e5e5e5;
 	position:relative;
+	padding-bottom: 40px;
 }
 
 div#container div#logo {

@@ -5,7 +5,7 @@
 
 // Query routes.
 $flights = array();
-$sql = "SELECT id, flight_number from flight;";
+$sql = "SELECT id, flight_number from flight WHERE departure_date>=NOW();";
 
 $results_query = mysql_query($sql, $mysql) or die(mysql_error());
 while ($row = mysql_fetch_assoc($results_query)) {
@@ -27,6 +27,33 @@ function check(){
 }
 </script>
 
+<fieldset>
+	<legend>Flight Passengers Reporting</legend>
+	<form method='post' action='report_passengers.php'>
+		<div class='line'>
+			<div class='label'>Flight Number</div>
+			<div class='field'>
+				<select id='flight_id' name='flight_id'>
+				<?php foreach($flights as $result){?>
+					<option
+					<?php if($_POST['flight_id']==$result['id']) echo ' selected="selected" ';?>
+					 value='<?=$result['id']?>'><?=$result['flight_number']?></option>
+				<?php }?>
+				</select>
+			</div>
+		</div>
+
+		<div class='line'>
+			<div class='label'>
+				&nbsp;
+			</div>
+			<div class='field'>
+				<input type='submit' value='Generate report &raquo;'/>
+			</div>			
+		</div>
+	</form>
+</fieldset>
+	
 <fieldset>
 	<legend>Check-in passengers</legend>
 	<?php if($error){?><div class='line error'><?=$error?></div><?php }?>
@@ -76,4 +103,3 @@ function check(){
 		</div>
 	</form>
 </fieldset>
-	
