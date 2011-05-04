@@ -233,16 +233,8 @@ CREATE TABLE `route` (
 
 DROP TABLE IF EXISTS `route_listing`;
 /*!50001 DROP VIEW IF EXISTS `route_listing`*/;
-SET @saved_cs_client     = @@character_set_client;
-SET character_set_client = utf8;
-/*!50001 CREATE TABLE `route_listing` (
-  `id` int(11),
-  `route_name` varchar(201),
-  `departure` int(11),
-  `destination` int(11),
-  `duration` int(11)
-) ENGINE=MyISAM */;
-SET character_set_client = @saved_cs_client;
+
+CREATE VIEW `route_listing` AS (select `r`.`id` AS `id`,concat(`f`.`name`,'-',`t`.`name`) AS `route_name`,`f`.`id` AS `departure`,`t`.`id` AS `destination`,`r`.`duration` AS `duration` from ((`route` `r` join `airport` `f`) join `airport` `t`) where ((`r`.`departure` = `f`.`id`) and (`r`.`destination` = `t`.`id`)));
 
 --
 -- Final view structure for view `route_listing`
