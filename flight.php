@@ -22,7 +22,9 @@ if ($action == 'new'){
 		$error = 'Fill in all the fields.';
 	} else if ($cpt == $asst){
 		$error = 'Captain and asst. pilots cannot be the same.';
-	}else {
+	} else if(mktime($hour,$minute+3,0,$month,$day,$year)<time()){
+		$error = 'Can not arrange a flight to the past.';
+	} else {
 		$count_query = mysql_query("SELECT COUNT(*) FROM flight WHERE flight_number='$number'", $mysql) or die(mysql_error());
 		$count = intval(mysql_result($count_query,0,0));
 		
@@ -66,6 +68,8 @@ if ($action == 'new'){
 		$error = 'Fill in all the fields.';
 	} else if ($cpt == $asst){
 		$error = 'Captain and asst. pilots cannot be the same.';
+	} else if(mktime($hour,$minute+3,0,$month,$day,$year)<time()){
+		$error = 'Can not arrange a flight to the past.';
 	}else {
 		$count_query = mysql_query("SELECT COUNT(*) FROM flight WHERE flight_number='$number' and id<>$edit_id", $mysql) or die(mysql_error());
 		$count = intval(mysql_result($count_query,0,0));
@@ -91,14 +95,8 @@ if ($action == 'new'){
 
 if ($action == 'delete'){
 	$delete_id = intval($_GET['id']);
-	$type = trim($_GET['type']);
-	if ($type=='SALES' || $type=='EXEC'){
-		$table = 'ground_staff';
-	} else {
-		$table = 'flight_staff';
-	}
-	mysql_query("DELETE FROM $table WHERE id=$delete_id", $mysql) or die(mysql_error());
-	$success = 'Employee has been fired.';
+	mysql_query("DELETE FROM flight WHERE id=$delete_id", $mysql) or die(mysql_error());
+	$success = 'Flight has been cancelled.';
 }
 
 

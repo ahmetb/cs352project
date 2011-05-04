@@ -374,13 +374,10 @@ DROP TABLE IF EXISTS `route_listing`;
 /*!50001 DROP VIEW IF EXISTS `route_listing`*/;
 CREATE VIEW `route_listing` AS (select `r`.`id` AS `id`,concat(`f`.`name`,'-',`t`.`name`) AS `route_name`,`f`.`id` AS `departure`,`t`.`id` AS `destination`,`r`.`duration` AS `duration` from ((`route` `r` join `airport` `f`) join `airport` `t`) where ((`r`.`departure` = `f`.`id`) and (`r`.`destination` = `t`.`id`)));
 
-
 --
 -- Final view structure for view `route_listing`
 --
 
-/*!50001 DROP TABLE IF EXISTS `route_listing`*/;
-/*!50001 DROP VIEW IF EXISTS `route_listing`*/;
 /*!50001 SET @saved_cs_client          = @@character_set_client */;
 /*!50001 SET @saved_cs_results         = @@character_set_results */;
 /*!50001 SET @saved_col_connection     = @@collation_connection */;
@@ -404,4 +401,4 @@ CREATE VIEW `route_listing` AS (select `r`.`id` AS `id`,concat(`f`.`name`,'-',`t
 
 
 
-INSERT INTO ground_staff(name,password,type) VALUES ('admin', '21232f297a57a5a743894a0e4a801fc3', 'EXEC');
+INSERT INTO ground_staff(id,name,password,type) VALUES (1,'admin', '21232f297a57a5a743894a0e4a801fc3', 'EXEC');
