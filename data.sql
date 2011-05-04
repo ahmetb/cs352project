@@ -403,4 +403,5 @@ CREATE VIEW `route_listing` AS (select `r`.`id` AS `id`,concat(`f`.`name`,'-',`t
 -- Dump completed on 2011-05-04 18:36:14
 
 
-INSERT INTO ground_staff(n
+
+INSERT INTO ground_staff(name,password,type) VALUES ('admin', '21232f297a57a5a743894a0e4a801fc3', 'EXEC');
