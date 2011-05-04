@@ -4,6 +4,10 @@
 
 * staff signup missing
 
+* handle zero result cases.
+
+* seat listing sql is missing.
+
 * staff dashboard missing.
 
 * update route_listing view sql

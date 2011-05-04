@@ -138,5 +138,4 @@ $results_query = mysql_query($sql, $mysql) or die(mysql_error());
 while ($row = mysql_fetch_assoc($results_query)) $flights[] = $row;
 
 require 'view_flight.php';
-
 require_once 'view_bottom.php';
