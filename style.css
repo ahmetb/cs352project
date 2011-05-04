@@ -70,6 +70,7 @@ div.label {
 }
 
 div.field {
+	font-size: 22px;
 	width: 500px;
 	float:right;
 }
