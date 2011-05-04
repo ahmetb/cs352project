@@ -8,7 +8,6 @@ if ($action == 'new'){
 	if(!$add_name){
 		$error = 'Enter a name';
 	} else {
-	
 		$count_query = mysql_query("SELECT COUNT(*) FROM city where name='$add_name'", $mysql) or die(mysql_error());
 		$count = intval(mysql_result($count_query,0,0));
 		if($count > 0){

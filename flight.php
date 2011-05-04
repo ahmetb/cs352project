@@ -130,7 +130,6 @@ $results_query = mysql_query($sql, $mysql) or die(mysql_error());
 while ($row = mysql_fetch_assoc($results_query)) $planes[] = $row;
 
 
-
 // Query flights 
 $flights = array();
 $sql = "SELECT f.id, f.flight_number, f.departure_date,f.fare, f.route, f.plane, r.route_name, p.name as plane_name, a.staff_id as asst, c.staff_id as cpt, h.staff_id as host FROM flight f, route_listing r, plane p, flight_crew c, flight_crew a, flight_crew h WHERE r.id=f.route AND p.id=f.plane AND a.role='ASST' and a.flight_id=f.id AND c.role='CPT' and c.flight_id=f.id AND h.role='HOST' and h.flight_id=f.id ORDER BY departure_date DESC";

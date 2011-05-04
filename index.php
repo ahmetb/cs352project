@@ -13,7 +13,7 @@ if(!$_SESSION['login']){
 		else
 			include 'view_dashboard_exec.php';
 	} else {
-		include 'view_dashboard.php';
+		include 'view_dashboard_customer.php';
 	}
 }
 ?>
