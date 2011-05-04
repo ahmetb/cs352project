@@ -5,14 +5,17 @@ html, body {
 
 body {
 	margin: 0;
-	font: 16px normal Helvetica, Arial, sans-serif, serif;
+	font: 16px normal 'Ubuntu', Helvetica, Arial, sans-serif, serif;
 }
 
 h1, h2,h3,h4,h5{
-
-	font-family: Georgia, 'Myriad Pro', Arial, serif;
-	color: #333;
+	font-family: 'Philosopher', arial, serif;
+	color: #829C00;
 	font-weight: normal;
+}
+
+a {
+	text-decoration:none;
 }
 
 a img {
@@ -22,8 +25,7 @@ a img {
 div#container {
 	margin: 30px auto;
 	padding: 10px;
-	width: 800px;
-	background-color: #e5e5e5;
+	width: 900px;
 	position:relative;
 	padding-bottom: 40px;
 }
@@ -32,7 +34,7 @@ div#container div#logo {
 	width: 100%;
 	text-align:center;
 	font-size: 50px;
-	font-family: Georgia, Arial, sans-serif,serif;
+	font-family: 'Lobster', arial, serif;
 }
 
 div#container div#logout {
@@ -54,6 +56,7 @@ fieldset {
 fieldset legend {
 	font-family: Georgia, Arial, sans-serif,serif;
 	font-size: 130%;
+	color: #829C00;
 }
 
 div.line {
@@ -68,6 +71,7 @@ div.label {
 	font-size: 22px;
 	padding-right: 10px;
 	float:left;
+	color: #555;
 }
 
 div.field {
@@ -87,17 +91,21 @@ a:hover {
 	color: #fff;
 }
 
-table.data{
+table.data {
+	width: 100%;
 	margin:10px auto;
 	border: 0px;
 }
 
 table.data td {
-	border: 1px solid;
+	border: 1px dotted #aaa;
+	text-align: center;
 }
 
 table.data tr.legend td {
 	text-align:center;
+	text-decoration:underline;
+	font-weight:bold;
 }
 
 table a {

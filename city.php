@@ -14,7 +14,7 @@ if ($action == 'new'){
 			$error = 'City already exists.';
 		} else {
 			mysql_query("INSERT INTO city (name) VALUES ('$add_name')", $mysql) or die(mysql_error());
-			$success = 'City has been inserted.';
+			$success = 'City has been created.';
 		}
 	}
 } 

@@ -1,4 +1,3 @@
-
 -- MySQL dump 10.13  Distrib 5.5.9, for osx10.4 (i386)
 --
 -- Host: localhost    Database: airline
@@ -31,9 +30,18 @@ CREATE TABLE `airport` (
   PRIMARY KEY (`id`),
   KEY `city` (`city`),
   CONSTRAINT `airport_ibfk_2` FOREIGN KEY (`city`) REFERENCES `city` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Dumping data for table `airport`
+--
+
+LOCK TABLES `airport` WRITE;
+/*!40000 ALTER TABLE `airport` DISABLE KEYS */;
+INSERT INTO `airport` VALUES (7,'ESB','Esenboga',11),(8,'GOX','Sabiha Gokcen',12),(9,'LTBA','Ataturk',13);
+/*!40000 ALTER TABLE `airport` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `booking`
@@ -46,7 +54,7 @@ CREATE TABLE `booking` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `seat` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
-  `booking_date` datetime NOT NULL CHECK (booking_date>=NOW()),
+  `booking_date` datetime NOT NULL,
   `flight_id` int(11) NOT NULL,
   `payment` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -55,9 +63,18 @@ CREATE TABLE `booking` (
   KEY `payment` (`payment`),
   CONSTRAINT `booking_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`) ON DELETE CASCADE,
   CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`flight_id`) REFERENCES `flight` (`id`) ON DELETE CASCADE,
-  CONSTRAINT `booking_ibfk_3` FOREIGN KEY (`payment`) REFERENCES `payment` (`transaction_id`) 
+  CONSTRAINT `booking_ibfk_3` FOREIGN KEY (`payment`) REFERENCES `payment` (`transaction_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `booking`
+--
+
+LOCK TABLES `booking` WRITE;
+/*!40000 ALTER TABLE `booking` DISABLE KEYS */;
+/*!40000 ALTER TABLE `booking` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `booking_luggage`
@@ -76,6 +93,14 @@ CREATE TABLE `booking_luggage` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Dumping data for table `booking_luggage`
+--
+
+LOCK TABLES `booking_luggage` WRITE;
+/*!40000 ALTER TABLE `booking_luggage` DISABLE KEYS */;
+/*!40000 ALTER TABLE `booking_luggage` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `city`
@@ -88,9 +113,18 @@ CREATE TABLE `city` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Dumping data for table `city`
+--
+
+LOCK TABLES `city` WRITE;
+/*!40000 ALTER TABLE `city` DISABLE KEYS */;
+INSERT INTO `city` VALUES (11,'Ankara'),(12,'Kocaeli'),(13,'Istanbul');
+/*!40000 ALTER TABLE `city` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `customer`
@@ -108,6 +142,14 @@ CREATE TABLE `customer` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Dumping data for table `customer`
+--
+
+LOCK TABLES `customer` WRITE;
+/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
+/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `flight`
@@ -131,6 +173,18 @@ CREATE TABLE `flight` (
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Dumping data for table `flight`
+--
+
+LOCK TABLES `flight` WRITE;
+/*!40000 ALTER TABLE `flight` DISABLE KEYS */;
+/*!40000 ALTER TABLE `flight` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `flight_crew`
+--
 
 DROP TABLE IF EXISTS `flight_crew`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -146,6 +200,18 @@ CREATE TABLE `flight_crew` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Dumping data for table `flight_crew`
+--
+
+LOCK TABLES `flight_crew` WRITE;
+/*!40000 ALTER TABLE `flight_crew` DISABLE KEYS */;
+/*!40000 ALTER TABLE `flight_crew` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `flight_staff`
+--
 
 DROP TABLE IF EXISTS `flight_staff`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -160,7 +226,18 @@ CREATE TABLE `flight_staff` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Dumping data for table `flight_staff`
+--
 
+LOCK TABLES `flight_staff` WRITE;
+/*!40000 ALTER TABLE `flight_staff` DISABLE KEYS */;
+/*!40000 ALTER TABLE `flight_staff` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ground_staff`
+--
 
 DROP TABLE IF EXISTS `ground_staff`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -173,8 +250,22 @@ CREATE TABLE `ground_staff` (
   `type` enum('EXEC','SALES') DEFAULT 'SALES',
   `date_joined` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ground_staff`
+--
+
+LOCK TABLES `ground_staff` WRITE;
+/*!40000 ALTER TABLE `ground_staff` DISABLE KEYS */;
+INSERT INTO `ground_staff` VALUES (5,0,'admin','21232f297a57a5a743894a0e4a801fc3','EXEC',NULL);
+/*!40000 ALTER TABLE `ground_staff` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `luggage`
+--
 
 DROP TABLE IF EXISTS `luggage`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -186,6 +277,18 @@ CREATE TABLE `luggage` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Dumping data for table `luggage`
+--
+
+LOCK TABLES `luggage` WRITE;
+/*!40000 ALTER TABLE `luggage` DISABLE KEYS */;
+/*!40000 ALTER TABLE `luggage` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `payment`
+--
 
 DROP TABLE IF EXISTS `payment`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -198,7 +301,18 @@ CREATE TABLE `payment` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Dumping data for table `payment`
+--
 
+LOCK TABLES `payment` WRITE;
+/*!40000 ALTER TABLE `payment` DISABLE KEYS */;
+/*!40000 ALTER TABLE `payment` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `plane`
+--
 
 DROP TABLE IF EXISTS `plane`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -209,9 +323,22 @@ CREATE TABLE `plane` (
   `capacity` int(11) NOT NULL,
   `model` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Dumping data for table `plane`
+--
+
+LOCK TABLES `plane` WRITE;
+/*!40000 ALTER TABLE `plane` DISABLE KEYS */;
+INSERT INTO `plane` VALUES (5,'Hezarfen',25,'Boeing 737-300'),(6,'Kartal',2,'F16');
+/*!40000 ALTER TABLE `plane` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `route`
+--
 
 DROP TABLE IF EXISTS `route`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -224,12 +351,24 @@ CREATE TABLE `route` (
   PRIMARY KEY (`id`),
   KEY `departure` (`departure`),
   KEY `destination` (`destination`),
-  CHECK (departure<>destination),
   CONSTRAINT `route_ibfk_1` FOREIGN KEY (`departure`) REFERENCES `airport` (`id`) ON DELETE CASCADE,
   CONSTRAINT `route_ibfk_2` FOREIGN KEY (`destination`) REFERENCES `airport` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Dumping data for table `route`
+--
+
+LOCK TABLES `route` WRITE;
+/*!40000 ALTER TABLE `route` DISABLE KEYS */;
+INSERT INTO `route` VALUES (7,7,9,120),(8,9,7,120),(9,8,9,20),(10,8,7,100);
+/*!40000 ALTER TABLE `route` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Temporary table structure for view `route_listing`
+--
 
 DROP TABLE IF EXISTS `route_listing`;
 /*!50001 DROP VIEW IF EXISTS `route_listing`*/;
@@ -272,7 +411,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2011-05-04 18:07:09
-
-
-INSERT INTO ground_staff(name,password,type) VALUES ('admin', '21232f297a57a5a743894a0e4a801fc3', 'EXEC');
+-- Dump completed on 2011-05-04 18:36:14
