@@ -8,6 +8,8 @@
 
 * seat listing sql is missing.
 
+* fix fullness report sql
+
 * staff dashboard missing.
 
 * update route_listing view sql

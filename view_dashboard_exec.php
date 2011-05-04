@@ -12,5 +12,7 @@
 
 <h3>Reports</h3>
 <ul>
-	<li>Total Revenue per Year</li>
+	<li><a href='report_avg_salary.php'>Average Staff Salary Report</a></li>
+	<li><a href='report_fullness.php'>Fullness Report of Upcoming Flights</a></li>
+	<li><a href='report_revenue.php'>Total Revenue per Month</a></li>
 <ul>
