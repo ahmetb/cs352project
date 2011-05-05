@@ -13,7 +13,7 @@ $name = trim($_POST['name']);
 $customer_id = $_SESSION['id'];
 
 // Won't use this. 
-if(!$seat || !$customer_id || !$ccn || !$cvc || !$name || !$amount || !$flight_id){
+if(!$seat || !$customer_id || !$amount || !$flight_id){
 	$error = 'Please go back and fill in all the fields to proceeed.';
 } else{	
 	mysql_query("BEGIN;", $mysql) or die(mysql_error());
