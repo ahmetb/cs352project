@@ -1,10 +1,10 @@
 <?php
 // Query airports.
-$airports = array();
-$results = mysql_query('SELECT a.id,a.name,a.code,c.name as city FROM airport a,city c WHERE a.city=c.id ORDER BY c.name', $mysql) or die(mysql_error());
+$cities = array();
+$results = mysql_query('SELECT c.id,c.name FROM city c ORDER BY c.name', $mysql) or die(mysql_error());
 while ($row = mysql_fetch_assoc($results)) {
 	$res = null;
-	$airports[] = $row;
+	$cities[] = $row;
 }
 ?>
 <div id='create'>
@@ -16,10 +16,10 @@ while ($row = mysql_fetch_assoc($results)) {
 				<div class='label'>From</div>
 				<div class='field'>
 					<select name='departure' id='departure'>
-						<?php foreach($airports as $airport){?>
+						<?php foreach($cities as $city){?>
 							<option
-							<?php if($_POST['departure']==$airport['id']) echo ' selected="selected" ';?>
-							value='<?=$airport['id']?>'><?=$airport['city']?> <?=$airport['name']?> (<?=$airport['code']?>)</option>
+							<?php if($_POST['destination']==$city['id']) echo ' selected="selected" ';?>
+							value='<?=$city['id']?>'> <?=$city['name']?> </option>
 						<?}?>
 					</select>
 				</div>
@@ -29,9 +29,10 @@ while ($row = mysql_fetch_assoc($results)) {
 				<div class='label'>To</div>
 				<div class='field'>
 					<select name='destination' id='destination'>
-						<?php foreach($airports as $airport){?>
+						<?php foreach($cities as $city){?>
 							<option
-							<?php if($_POST['destination']==$airport['id']) echo ' selected="selected" ';?> value='<?=$airport['id']?>'><?=$airport['city']?> <?=$airport['name']?> (<?=$airport['code']?>)</option>
+							<?php if($_POST['destination']==$city['id']) echo ' selected="selected" ';?>
+							value='<?=$city['id']?>'> <?=$city['name']?> </option>
 						<?}?>
 					</select>
 				</div>
