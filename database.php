@@ -4,7 +4,7 @@ $databaseConfig = Array(
 	"db" => "airlinee",
 	"server" => "db.ahmetalpbalkan.com",
 	"user" => "airlinee",
-	"pass" => "airlinee"
+	"pass" => "airlinee",
 	"pass" => "root"
 );
 
