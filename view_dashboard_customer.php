@@ -18,7 +18,7 @@ while ($row = mysql_fetch_assoc($results)) {
 					<select name='departure' id='departure'>
 						<?php foreach($cities as $city){?>
 							<option
-							<?php if($_POST['destination']==$city['id']) echo ' selected="selected" ';?>
+							<?php if($_POST['departure']==$city['id']) echo ' selected="selected" ';?>
 							value='<?=$city['id']?>'> <?=$city['name']?> </option>
 						<?}?>
 					</select>
@@ -39,7 +39,7 @@ while ($row = mysql_fetch_assoc($results)) {
 			</div>
 			
 			<div class='line'>
-				<div class='label'>Departure Date </div>
+				<div class='label'>Departure Date between </div>
 				<div class='field'>
 					<select name='month' id='add_month'>
 					<?php for($i=1;$i<=12;$i++){
@@ -61,6 +61,31 @@ while ($row = mysql_fetch_assoc($results)) {
 					</select>
 				</div>
 			</div>
+			
+			<div class='line'>
+				<div class='label'>and </div>
+				<div class='field'>
+					<select name='month2' id='add_month2'>
+					<?php for($i=1;$i<=12;$i++){
+						echo "<option ";
+						if(intval(date("m", time()+3*24*60*60))==$i) echo "selected='selected' ";
+						echo "value='$i'>".date("M", mktime(0,0,0,$i))."</option>\n";}?>
+					</select> / 
+					<select name='day2' id='add_day2'>
+					<?php for($i=1;$i<=31;$i++){
+						echo "<option ";
+						if(intval(date("d", time()+3*24*60*60))==$i) echo "selected='selected' ";
+						echo "value='$i'>$i</option>\n";}?>
+					</select> /
+					<select name='year2' id='add_year2'>
+					<?php for($i=intval(date("Y", time()+3*24*60*60));$i>1990;$i--){
+						echo "<option ";
+						if(intval(date("Y", time()+3*24*60*60))==$i) echo "selected='selected' ";
+						echo "value='$i'>$i</option>\n";}?>
+					</select>
+				</div>
+			</div>
+
 			
 			<div class='line'>
 				<div class='label'>

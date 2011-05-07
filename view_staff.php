@@ -63,6 +63,9 @@ foreach($results as $result){?>
 		</td>
 	</tr>
 <?php }?>
+<?php if (!count($results)){?>
+	<tr><td width="100%" colspan='6'>No staff found. Create some.</td></tr>
+<?php }?>
 </table>
 
 <div id='edit' style="display: none">

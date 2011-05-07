@@ -30,6 +30,9 @@ while ($row = mysql_fetch_assoc($results_query)) $res[] = $row;
 		<td witdth='25%'>$<?=number_format($r['revenue'])?></td>
 	</tr>
 	<?php }?>
+	<?php if (!count($res)){?>
+		<tr><td width="100%" colspan='6'>No tickets sold, therefore no revenue summary are shown.</td></tr>
+	<?php }?>
 </table>
 
 <input type='button' value='&laquo; Back' onclick='window.location="index.php"'/>

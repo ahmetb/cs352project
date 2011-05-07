@@ -24,6 +24,9 @@
 			</td>
 		</tr>
 	<?php }?>
+	<?php if (!count($flights)){?>
+		<tr><td width="100%" colspan='6'>No flights found matching criteria. Try broadening search query.</td></tr>
+	<?php }?>
 	</table>
 
 	<div class='line' style='text-align:right;'>

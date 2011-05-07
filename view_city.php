@@ -45,6 +45,9 @@ function edit(id, name){
 		</td>
 	</tr>
 <?php }?>
+<?php if (!count($cities)){?>
+	<tr><td width="100%" colspan='3'>No cities found.</td></tr>
+<?php }?>
 </table>
 
 <div id='edit' style="display: none">

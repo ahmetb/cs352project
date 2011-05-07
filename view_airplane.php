@@ -54,6 +54,9 @@ function edit(id, name,model,capacity){
 		</td>
 	</tr>
 <?php }?>
+<?php if (!count($airplanes)){?>
+	<tr><td width="100%" colspan='6'>No results found.</td></tr>
+<?php }?>
 </table>
 
 <div id='edit' style="display: none">

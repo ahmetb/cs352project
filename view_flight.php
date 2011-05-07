@@ -83,6 +83,9 @@ foreach($flights as $result){?>
 		</td>
 	</tr>
 <?php }?>
+<?php if (!count($flights)){?>
+	<tr><td width="100%" colspan='7'>No flights found.</td></tr>
+<?php }?>
 </table>
 
 

@@ -41,6 +41,9 @@ DEPARTURE ON: <?=$flight_date?><br/>
 		<td witdth='30%'><?=date("M d Y,H:ia", strtotime($p['booked_at']))?></td>
 	<tr>
 	<?php }?>
+	<?php if (!count($passengers)){?>
+		<tr><td width="100%" colspan='3'>No passengers exist in this flight.</td></tr>
+	<?php }?>
 </table>
 
 <div class='line'>

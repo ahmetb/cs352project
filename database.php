@@ -1,14 +1,11 @@
 <?php
 
 $databaseConfig = Array(
-	/*"db" => "airline",
-	"server" => "localhost",
-	"user" => "root",
-	"pass" => "root"*/
 	"db" => "airlinee",
 	"server" => "db.ahmetalpbalkan.com",
 	"user" => "airlinee",
 	"pass" => "airlinee"
+	"pass" => "root"
 );
 
 $mysql = mysql_connect($databaseConfig["server"],$databaseConfig["user"],$databaseConfig["pass"]) or die("DB CONNECTION ERROR.");

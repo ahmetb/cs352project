@@ -29,6 +29,9 @@ while ($row = mysql_fetch_assoc($results_query)) $res[] = $row;
 		<td witdth='15%'><?=number_format(intval($r['fullness']))?>%</td>
 	</tr>
 	<?php }?>
+	<?php if (!count($res)){?>
+		<tr><td width="100%" colspan='5'>No flights found.</td></tr>
+	<?php }?>
 </table>
 
 <input type='button' value='&laquo; Back' onclick='window.location="index.php"'/>
