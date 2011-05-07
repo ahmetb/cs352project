@@ -44,6 +44,16 @@ function check(){
 	</div>
 </div>
 
+
+<?php if (intval($result['plane_capacity'])<=count($seats)){?>
+<div class='line'>
+	<div class='label'>Sorry</div>
+	<div class='field'>
+		No seats left.
+	</div>
+</div>
+<?}else{?>
+
 <div class='line'>
 	<div class='label'>Travel Time</div>
 	<div class='field'><?=$result['duration']?> minutes
@@ -113,5 +123,6 @@ function check(){
 		<div class='label'>&nbsp;</div>
 		<div class='field'><input type='submit' value='Checkout &raquo;'/></div>			
 	</div>
+<?}?>
 </fieldset>
 <form>
