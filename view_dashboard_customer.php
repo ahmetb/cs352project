@@ -54,7 +54,7 @@ while ($row = mysql_fetch_assoc($results)) {
 						echo "value='$i'>$i</option>\n";}?>
 					</select> /
 					<select name='year' id='add_year'>
-					<?php for($i=intval(date("Y"));$i>1990;$i--){
+					<?php for($i=intval(date("Y"));$i<intval(date("Y"))+3;$i++){
 						echo "<option ";
 						if(intval(date("Y"))==$i) echo "selected='selected' ";
 						echo "value='$i'>$i</option>\n";}?>
@@ -78,7 +78,7 @@ while ($row = mysql_fetch_assoc($results)) {
 						echo "value='$i'>$i</option>\n";}?>
 					</select> /
 					<select name='year2' id='add_year2'>
-					<?php for($i=intval(date("Y", time()+3*24*60*60));$i>1990;$i--){
+					<?php for($i=intval(date("Y", time()+3*24*60*60));$i<intval(date("Y", time()+3*24*60*60))+3;$i++){
 						echo "<option ";
 						if(intval(date("Y", time()+3*24*60*60))==$i) echo "selected='selected' ";
 						echo "value='$i'>$i</option>\n";}?>
