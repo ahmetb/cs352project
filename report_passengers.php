@@ -50,6 +50,4 @@ DEPARTURE ON: <?=$flight_date?><br/>
 	<div class='label'><input type='button' value='&laquo; Back' onclick='history.back(-1)'/></div>
 	<div class='field'><input type='button' onclick='window.print()' value='Print report &raquo;'/></div>			
 </div>
-
-{}
 <?php include 'view_bottom.php'?>

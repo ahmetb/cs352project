@@ -47,7 +47,7 @@ if ($_POST) if(!$flight_id || !$seat){
 			$cs = mysql_query("SELECT id,name FROM customer where id=$customer_id", $mysql) or die(mysql_error());
 			$customer_name = mysql_result($cs, 0, 'name');
 			
-			$fd = mysql_query("SELECT r.route_name as name, f.departure_date as date FROM flight f, route_listing r where f.route=r.id AND id=$flight_id", $mysql) or die(mysql_error());
+			$fd = mysql_query("SELECT r.route_name as name, f.departure_date as date FROM flight f, route_listing r where f.route=r.id AND f.id=$flight_id", $mysql) or die(mysql_error());
 			$flight_route = mysql_result($fd, 0, 'name');
 			$flight_date = mysql_result($fd, 0, 'date');
 		}

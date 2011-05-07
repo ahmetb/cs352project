@@ -39,7 +39,7 @@ while ($row = mysql_fetch_assoc($results)) {
 			</div>
 			
 			<div class='line'>
-				<div class='label'>Departure Date between </div>
+				<div class='label'>Departure between </div>
 				<div class='field'>
 					<select name='month' id='add_month'>
 					<?php for($i=1;$i<=12;$i++){
