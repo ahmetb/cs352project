@@ -7,8 +7,8 @@ include 'view_top.php';
 <?php
 
 $res = array();
-$sql = "SELECT fs.flight_number, fs.departure_date, fs.sold as sold, p.capacity, fs.sold/p.capacity*100 as fullness  FROM (SELECT f.flight_number, f.departure_date, f.plane, tmp.count as sold FROM flight f LEFT OUTER JOIN ( (SELECT flight_id, COUNT(*) as count from booking GROUP BY flight_id) tmp) ON (tmp.flight_id=f.id) WHERE f.departure_date>NOW() ORDER BY f.departure_date ASC LIMIT 30) fs, plane p where p.id=fs.plane;";
-    
+$sql = "SELECT fs.flight_number, fs.departure_date, fs.sold as sold, p.capacity, fs.sold/p.capacity*100 as fullness  FROM (SELECT f.flight_number, f.departure_date, f.plane, tmp.count as sold FROM flight f LEFT OUTER JOIN ( (SELECT flight_id, COUNT(*) as count from booking GROUP BY flight_id) tmp) ON (tmp.flight_id=f.id) WHERE f.departure_date>NOW()) fs, plane p where p.id=fs.plane ORDER BY fs.departure_date ASC LIMIT 30;"
+
 $results_query = mysql_query($sql, $mysql) or die(mysql_error());
 while ($row = mysql_fetch_assoc($results_query)) $res[] = $row;
 ?>
